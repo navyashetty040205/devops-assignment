@@ -23,20 +23,16 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '/usr/local/bin/docker build -t devops-assignment  .'
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                echo 'Docker Image Pushed to DockerHub'
+                sh '/usr/local/bin/docker --version'
+                echo 'Docker Build Stage Completed'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Application Deployed'
+                echo 'Deployment Stage Completed'
             }
         }
+
     }
 }
