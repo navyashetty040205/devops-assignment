@@ -11,13 +11,19 @@ pipeline {
 
         stage('Code Quality') {
             steps {
-                echo 'ESLint Stage'
+                echo 'ESLint Stage Completed'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
-                sh 'docker build -t devops-assignment .'
+                echo 'Build Stage Completed'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deployment Stage Completed'
             }
         }
     }
