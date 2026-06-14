@@ -1,27 +1,27 @@
 pipeline {
 agent any
 
-```
+
 stages {
-    stage('Checkout') {
+    stage('Checkout')  {
         steps {
             git 'https://github.com/navyashetty040205/devops-assignment.git'
         }
     }
 
-    stage('Code Quality - ESLint') {
+    stage('Code Quality - ESLint')  {
         steps {
             sh 'npm install'
             sh 'npx eslint . || true'
         }
     }
 
-    stage('Build Docker Image') {
+    stage('Build Docker Image')  {
         steps {
-            sh 'docker build -t devops-assignment .'
+            sh 'docker build -t devops-assignment  .'
         }
     }
 }
-```
+
 
 }
