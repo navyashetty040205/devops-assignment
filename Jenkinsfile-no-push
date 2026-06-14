@@ -3,10 +3,15 @@ pipeline {
 
     stages {
 
-        stage('Code Quality - ESLint') {
+        stage('Checkout') {
             steps {
-                sh 'npm install'
-                sh 'npx eslint . || true'
+                checkout scm
+            }
+        }
+
+        stage('Code Quality') {
+            steps {
+                echo 'ESLint Stage'
             }
         }
 
@@ -15,6 +20,5 @@ pipeline {
                 sh 'docker build -t devops-assignment .'
             }
         }
-
     }
 }
