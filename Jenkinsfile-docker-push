@@ -9,30 +9,40 @@ pipeline {
             }
         }
 
-        stage('Code Quality') {
+        stage('Git Version Check') {
             steps {
-                echo 'ESLint Analysis Completed'
+                sh 'git --version'
             }
         }
 
-        stage('Vulnerability Scan') {
+        stage('Dependency Check') {
             steps {
-                echo 'OWASP/Trivy Scan Completed'
+                sh 'npm install'
             }
         }
 
-        stage('Build Docker Image')  {
+        stage('Code Quality Check') {
             steps {
-                sh '/usr/local/bin/docker --version'
-                echo 'Docker Build Stage Completed'
+                sh 'npx eslint . || true'
             }
         }
 
-        stage('Deploy') {
+        stage('Containerization') {
             steps {
-                echo 'Deployment Stage Completed'
+                sh 'docker build -t navyashetty0402/devops-assignment:v2 .'
             }
         }
 
+        stage('Docker Hub Push') {
+            steps {
+                sh 'docker push navyashetty0402/devops-assignment:v2'
+            }
+        }
+
+        stage('Deployment') {
+            steps {
+                sh 'docker run -d -p 3000:3000 navyashetty0402/devops-assignment:v2 || true'
+            }
+        }
     }
 }
