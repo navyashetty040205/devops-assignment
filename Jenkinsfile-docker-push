@@ -49,11 +49,12 @@ stage('Dependency Check') {
             }
         }
 
-        stage('Deployment') {
+       stage('Deployment') {
     steps {
         sh 'docker stop devops-app || true'
         sh 'docker rm devops-app || true'
         sh 'docker run -d --name devops-app -p 3002:3000 navyashetty0402/devops-assignment:v2'
     }
 }
+    }
 }
