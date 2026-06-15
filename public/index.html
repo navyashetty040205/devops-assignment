@@ -1,93 +1,116 @@
-<header class="hero"></header>
-    <h1>🎓 Campus Event Hub</h1>
-    <p>Discover • Register • Participate</p>
-    <h3 id="today"></h3>
-</header>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="stats">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<div class="card">
-<h2 id="eventsCount">0</h2>
-<p>Total Events</p>
-</div>
+<body>
 
-<div class="card">
-<h2 id="studentsCount">0</h2>
-<p>Students</p>
-</div>
+    <div class="sidebar">
+        <h2>🎓 Campus Hub</h2>
 
-<div class="card">
-<h2 id="clubsCount">0</h2>
-<p>Clubs</p>
-</div>
+        <ul>
+            <li>🏠 Dashboard</li>
+            <li>📅 Events</li>
+            <li>👥 Clubs</li>
+            <li>📊 Analytics</li>
+            <li>📝 Registration</li>
+        </ul>
+    </div>
 
-<div class="card">
-<h2 id="regCount">0</h2>
-<p>Registrations</p>
-</div>
+    <div class="main-content">
 
-</section>
+        <section class="hero">
+            <h1>Campus Event Hub</h1>
+            <p>Discover • Register • Participate</p>
+            <button onclick="loadEvents()">Explore Events</button>
+        </section>
 
-<div class="search-section">
-<input
-id="search"
-type="text"
-placeholder="Search Events"
-onkeyup="searchEvents()"
-/>
-</div>
+        <div class="stats-container">
 
-<h2 class="title">Upcoming Events</h2>
+            <div class="card stat-card">
+                <h2 id="totalEvents">0</h2>
+                <p>Total Events</p>
+            </div>
 
-<section id="events"></section>
+            <div class="card stat-card">
+                <h2 id="students">0</h2>
+                <p>Students</p>
+            </div>
 
-<section class="announcement-box">
+            <div class="card stat-card">
+                <h2 id="clubsCount">0</h2>
+                <p>Clubs</p>
+            </div>
 
-<h2>📢 Announcements</h2>
+            <div class="card stat-card">
+                <h2 id="registrations">0</h2>
+                <p>Registrations</p>
+            </div>
 
-<ul id="announcements"></ul>
+        </div>
 
-</section>
+        <div id="featured"></div>
 
-<section class="register-box">
+        <h2 class="section-title">📅 Upcoming Events</h2>
+        <div id="events" class="grid"></div>
 
-<h2>📝 Student Registration</h2>
+        <h2 class="section-title">👥 Clubs</h2>
+        <div id="clubs" class="grid"></div>
 
-<input id="name" placeholder="Name">
+        <h2 class="section-title">📢 Announcements</h2>
+        <div id="announcements" class="card"></div>
 
-<input id="email" placeholder="Email">
+        <h2 class="section-title">📊 Analytics</h2>
 
-<input id="department"
-placeholder="Department">
+        <div class="analytics">
 
-<input id="year"
-placeholder="Year">
+            <div class="analytic-card">
+                <h3>Technical</h3>
+                <p>4 Events</p>
+            </div>
 
-<button onclick="registerStudent()">
-Register
-</button>
+            <div class="analytic-card">
+                <h3>Workshop</h3>
+                <p>3 Events</p>
+            </div>
 
-<p id="message"></p>
+            <div class="analytic-card">
+                <h3>Cultural</h3>
+                <p>2 Events</p>
+            </div>
 
-</section>
+            <div class="analytic-card">
+                <h3>Sports</h3>
+                <p>1 Event</p>
+            </div>
 
-<section class="tech">
+        </div>
 
-<h2>⚙ Technology Stack</h2>
+        <h2 class="section-title">📝 Student Registration</h2>
 
-<div class="tech-grid">
+        <div class="card form-card">
 
-<div>HTML</div>
-<div>CSS</div>
-<div>JavaScript</div>
-<div>Node.js</div>
-<div>Express</div>
-<div>Git</div>
-<div>GitHub</div>
-<div>Docker</div>
-<div>Docker Hub</div>
-<div>Jenkins</div>
+            <input type="text" id="name" placeholder="Student Name">
 
-</div>
+            <input type="email" id="email" placeholder="Email">
 
-</section>
+            <button onclick="registerStudent()">
+                Register
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
