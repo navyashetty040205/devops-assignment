@@ -10,26 +10,25 @@ pipeline {
         }
 
         stage('Git Version Check') {
-    steps {
-        sh 'git --version'
-    }
-}
+            steps {
+                sh 'git --version'
+            }
+        }
 
-stage('Node Check') {
-    steps {
-        sh 'which node'
-        sh 'node -v'
-        sh 'which npm'
-        sh 'npm -v'
-    }
-}
+        stage('Node Check') {
+            steps {
+                sh 'which node'
+                sh 'node -v'
+                sh 'which npm'
+                sh 'npm -v'
+            }
+        }
 
-stage('Dependency Check') {
-    steps {
-        sh 'npm install'
-    }
-}
-                
+        stage('Dependency Check') {
+            steps {
+                sh 'npm install'
+            }
+        }
 
         stage('Code Quality Check') {
             steps {
@@ -45,16 +44,16 @@ stage('Dependency Check') {
 
         stage('Docker Hub Push') {
             steps {
-               sh 'docker run -d --name devops-app -p 3003:3000 navyashetty0402/devops-assignment:v2'
+                sh 'docker push navyashetty0402/devops-assignment:v2'
             }
         }
 
-       stage('Deployment') {
-    steps {
-        sh 'docker stop devops-app || true'
-        sh 'docker rm devops-app || true'
-        sh 'docker run -d --name devops-app -p 3003:3000 navyashetty0402/devops-assignment:v2'
-    }
-}
+        stage('Deployment') {
+            steps {
+                sh 'docker stop devops-app || true'
+                sh 'docker rm devops-app || true'
+                sh 'docker run -d --name devops-app -p 4000:3000 navyashetty0402/devops-assignment:v2'
+            }
+        }
     }
 }
