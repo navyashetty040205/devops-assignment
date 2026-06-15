@@ -10,16 +10,26 @@ pipeline {
         }
 
         stage('Git Version Check') {
-            steps {
-                sh 'git --version'
-            }
-        }
+    steps {
+        sh 'git --version'
+    }
+}
 
-        stage('Dependency Check') {
-            steps {
-                sh 'npm install'
-            }
-        }
+stage('Node Check') {
+    steps {
+        sh 'which node'
+        sh 'node -v'
+        sh 'which npm'
+        sh 'npm -v'
+    }
+}
+
+stage('Dependency Check') {
+    steps {
+        sh 'npm install'
+    }
+}
+                
 
         stage('Code Quality Check') {
             steps {
