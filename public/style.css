@@ -1,91 +1,84 @@
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f6fb;
-}
-
-header{
-    text-align:center;
+.hero{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
     color:white;
-    padding:60px;
-    background:linear-gradient(90deg,#6a11cb,#2575fc);
-}
-
-.stats{
+    padding:70px;
+    text-align:center;
+    }
+    
+    .stats{
     display:flex;
+    gap:20px;
     justify-content:center;
-    gap:30px;
-    margin:40px;
     flex-wrap:wrap;
-}
-
-.card{
+    margin:30px;
+    }
+    
+    .card{
     background:white;
-    padding:30px;
+    padding:25px;
     width:220px;
     text-align:center;
     border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
-
-.date{
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    }
+    
+    .search-section{
     text-align:center;
     margin:20px;
-}
-
-.center{
-    text-align:center;
-}
-
-button{
-    background:#2575fc;
-    color:white;
-    border:none;
-    padding:12px 24px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#174fd6;
-}
-
-#events{
+    }
+    
+    .search-section input{
+    padding:12px;
+    width:350px;
+    border-radius:10px;
+    }
+    
+    #events{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
     padding:30px;
-}
-
-.event-card{
+    }
+    
+    .event-card{
     background:white;
     padding:20px;
     border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
-
-.announcement,
-.register,
-.tech{
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    }
+    
+    .badge{
+    background:#2575fc;
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    }
+    
+    .event-btn{
+    margin-top:10px;
+    padding:10px;
+    width:100%;
+    }
+    
+    .announcement-box,
+    .register-box,
+    .tech{
     background:white;
     margin:30px;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
-
-.register input{
-    display:block;
-    width:100%;
-    max-width:400px;
-    padding:10px;
-    margin:10px 0;
-}
-
-footer{
+    }
+    
+    .tech-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(120px,1fr));
+    gap:15px;
+    }
+    
+    .tech-grid div{
+    background:#f3f3f3;
+    padding:15px;
     text-align:center;
-    color:white;
-    background:#222;
-    padding:20px;
-    margin-top:40px;
-}
+    border-radius:10px;
+    }

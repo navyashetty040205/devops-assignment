@@ -1,86 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campus Event Hub</title>
-
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
+<header class="hero"></header>
     <h1>🎓 Campus Event Hub</h1>
     <p>Discover • Register • Participate</p>
+    <h3 id="today"></h3>
 </header>
 
 <section class="stats">
-    <div class="card">
-        <h2 id="count">0</h2>
-        <p>Total Events</p>
-    </div>
 
-    <div class="card">
-        <h2>500+</h2>
-        <p>Students</p>
-    </div>
+<div class="card">
+<h2 id="eventsCount">0</h2>
+<p>Total Events</p>
+</div>
 
-    <div class="card">
-        <h2>15</h2>
-        <p>Clubs</p>
-    </div>
+<div class="card">
+<h2 id="studentsCount">0</h2>
+<p>Students</p>
+</div>
+
+<div class="card">
+<h2 id="clubsCount">0</h2>
+<p>Clubs</p>
+</div>
+
+<div class="card">
+<h2 id="regCount">0</h2>
+<p>Registrations</p>
+</div>
+
 </section>
 
-<div class="date">
-    <h3 id="today"></h3>
+<div class="search-section">
+<input
+id="search"
+type="text"
+placeholder="Search Events"
+onkeyup="searchEvents()"
+/>
 </div>
 
-<div class="center">
-    <button onclick="loadEvents()">
-        🚀 View Events
-    </button>
-</div>
+<h2 class="title">Upcoming Events</h2>
 
 <section id="events"></section>
 
-<section class="announcement">
-    <h2>📢 Announcements</h2>
+<section class="announcement-box">
 
-    <ul>
-        <li>Hackathon registrations open now</li>
-        <li>Tech Fest volunteers needed</li>
-        <li>Coding Contest starts next week</li>
-    </ul>
+<h2>📢 Announcements</h2>
+
+<ul id="announcements"></ul>
+
 </section>
 
-<section class="register">
-    <h2>📝 Student Registration</h2>
+<section class="register-box">
 
-    <input id="name" type="text" placeholder="Student Name">
+<h2>📝 Student Registration</h2>
 
-    <input id="email" type="email" placeholder="Email">
+<input id="name" placeholder="Name">
 
-    <button onclick="registerStudent()">
-        Register
-    </button>
+<input id="email" placeholder="Email">
 
-    <p id="message"></p>
+<input id="department"
+placeholder="Department">
+
+<input id="year"
+placeholder="Year">
+
+<button onclick="registerStudent()">
+Register
+</button>
+
+<p id="message"></p>
+
 </section>
 
 <section class="tech">
-    <h2>⚙️ Tech Stack</h2>
 
-    <p>
-        HTML • CSS • JavaScript • Node.js • Express • Git • GitHub • Jenkins • Docker • Docker Hub
-    </p>
+<h2>⚙ Technology Stack</h2>
+
+<div class="tech-grid">
+
+<div>HTML</div>
+<div>CSS</div>
+<div>JavaScript</div>
+<div>Node.js</div>
+<div>Express</div>
+<div>Git</div>
+<div>GitHub</div>
+<div>Docker</div>
+<div>Docker Hub</div>
+<div>Jenkins</div>
+
+</div>
+
 </section>
-
-<footer>
-    DevOps CI/CD Project © 2026
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
